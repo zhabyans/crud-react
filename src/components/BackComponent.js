@@ -2,7 +2,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Container } from 'reactstrap'
+import { Button } from 'reactstrap'
 
 const BackComponent = () => {
     return (

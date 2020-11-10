@@ -1,6 +1,6 @@
 import React from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
-import { Container, Button, Row, Col } from 'reactstrap';
+import { Container, Button, Row, Col, Spinner } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfo, faEdit, faTrash, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
@@ -90,7 +90,7 @@ const TableComponent = (props) => {
                         </div>
                     )
                 }
-            </ToolkitProvider> : null}
+            </ToolkitProvider> : <Spinner style={{ width: '3rem', height: '3rem' }} />}
 
         </Container>
     )
