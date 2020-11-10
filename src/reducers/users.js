@@ -1,33 +1,20 @@
 let initialState = {
-    users: [
-        {
-            id: 1,
-            nama: 'budis',
-            alamat: 'Bali',
-            umur: 21,
-            nphp: '082143387387'
-        },
-        {
-            id: 2,
-            nama: 'ani',
-            alamat: 'Lumajang',
-            umur: 30,
-            nphp: '082467887387'
-        },
-        {
-            id: 3,
-            nama: 'caca',
-            alamat: 'Surabaya',
-            umur: 23,
-            nphp: '081789787387'
-        },
-    ],
-    error: false,
+    getUsersList: false,
+    getErrorList: false,
     title: 'CRUD With React JS',
 }
 
 const users = (state = initialState, action) => {
-    return state
+    switch (action.type) {
+        case "GET_USERS_LIST":
+            return {
+                ...state,
+                getUsersList: action.payload.data,
+                getErrorList: action.payload.errorMessage
+            };
+        default:
+            return state;
+    }
 }
 
 export default users

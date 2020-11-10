@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import TableComponent from '../components/TableComponent'
+import { getUsersList } from '../actions/userAction'
 
-export default class HomeContainer extends Component {
+class HomeContainer extends Component {
+
+    // MENJALANKAN DISPATCH DI DALAM FUNGSI GETUSERSLIST()
+    componentDidMount() {
+        this.props.dispatch(getUsersList());
+    }
+
     render() {
         return (
             <div>
@@ -10,3 +18,5 @@ export default class HomeContainer extends Component {
         )
     }
 }
+
+export default connect()(HomeContainer)

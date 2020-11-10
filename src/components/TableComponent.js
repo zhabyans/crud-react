@@ -58,7 +58,7 @@ const defaultSorted = [{
 const TableComponent = (props) => {
     return (
         <Container>
-            <ToolkitProvider
+            {props.userProps ? <ToolkitProvider
                 bootstrap4
                 keyField='id'
                 data={props.userProps}
@@ -90,14 +90,15 @@ const TableComponent = (props) => {
                         </div>
                     )
                 }
-            </ToolkitProvider>
+            </ToolkitProvider> : null}
+
         </Container>
     )
 }
 
 const mapStateToProps = (state /*, ownProps*/) => {
     return {
-        userProps: state.users.users
+        userProps: state.users.getUsersList
     }
 }
 
