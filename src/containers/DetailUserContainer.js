@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Container } from 'reactstrap'
-import { deleteUsersDetail, getUsersDetail } from '../actions/userAction'
+import { getUsersDetail } from '../actions/userAction'
 import BackComponent from '../components/BackComponent'
 import DetailUserComponent from '../components/DetailUserComponent'
 
 class DetailUserContainer extends Component {
     componentDidMount() {
-        this.props.dispatch(deleteUsersDetail());
         this.props.dispatch(getUsersDetail(this.props.match.params.id));
     }
     render() {
